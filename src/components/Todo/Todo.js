@@ -2,12 +2,12 @@
 import "./Todo.css"
 
 // Functions
-const Todo = () => {
+const Todo = (props) => {
 	return (
 		<>
 			<article className='todo'>
 				<header className='todo__header'>
-					<h1 className='todo__h1'>Things to do:</h1>
+					<h1 className='todo__h1'>Things to do</h1>
 				</header>
 				<ul className='todo__list'>
 					<li className='todo__item'>Groceries</li>
