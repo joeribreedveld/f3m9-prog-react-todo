@@ -1,11 +1,12 @@
 // Imports
 import "./App.css"
+import Todo from "../components/Todo/Todo"
 
 // Functions
 const App = () => {
 	return (
 		<>
-			<p>App</p>
+			<Todo />
 		</>
 	)
 }
