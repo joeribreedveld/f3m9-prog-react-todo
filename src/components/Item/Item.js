@@ -1,25 +1,37 @@
 // Imports
 import "./Item.css"
 import "../Todo/Todo.css"
+import { render } from "@testing-library/react"
+import React from "react"
 
 // Functions
-const Item = (props) => {
-	const todoClick = () => {
-		console.log("test")
+class Item extends React.Component {
+	constructor(props) {
+		super(props)
+		this.className = "todo__item"
+		this.state = { name: this.props.name, done: this.props.done }
 	}
 
-	let className = "todo__item"
-	if (props.done === true) {
-		className = "todo__item todo__item--done"
+	onItemClick = () => {
+		this.setState({ done: !this.state.done })
 	}
 
-	return (
-		<>
-			<li key={props.name} onClick={todoClick} className={className}>
-				{props.name}
-			</li>
-		</>
-	)
+	render() {
+		if (this.state.done === true) {
+			this.className = "todo__item todo__item--done"
+		}
+		if (this.state.done === false) {
+			this.className = "todo__item"
+		}
+
+		return (
+			<>
+				<li key={this.state.name} onClick={this.onItemClick} className={this.className}>
+					{this.state.name}
+				</li>
+			</>
+		)
+	}
 }
 
 // Exports
