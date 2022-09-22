@@ -1,6 +1,6 @@
 .todo {
     width: 40rem;
-    height: 60rem;
+    min-height: 60rem;
     box-shadow: -0 1rem 2rem 0 rgba(0, 0, 0, 0.2);
     border-radius: 1.6rem;
 }
@@ -29,6 +29,11 @@
     list-style: none;
     padding: 2rem;
     border-bottom: 0.2rem solid rgba(0, 0, 0, 0.2);
+}
+
+.todo__item--done {
+    text-decoration: line-through;
+    color: #888;
 }
 
 .todo__item:hover {
