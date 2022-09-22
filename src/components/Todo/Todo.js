@@ -1,5 +1,6 @@
 // Imports
 import "./Todo.css"
+import Item from "../Item/Item"
 
 // Functions
 const Todo = () => {
@@ -30,18 +31,10 @@ const Todo = () => {
 		},
 	]
 
-	let listItems = tasks.map((task) => {
-		if (task.done === true) {
-			return (
-				<>
-					<li className='todo__item todo__item--done'>{task.name}</li>
-				</>
-			)
-		}
-
+	const listItems = tasks.map((task) => {
 		return (
 			<>
-				<li className='todo__item'>{task.name}</li>
+				<Item name={task.name} done={task.done} />
 			</>
 		)
 	})
