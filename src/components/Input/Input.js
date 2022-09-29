@@ -10,12 +10,13 @@ class Input extends React.Component {
 	}
 
 	update = (e) => {
-		this.setState({ inputValue: e.target.value }, console.log(this.state.inputValue))
+		this.setState({ inputValue: e.target.value })
 	}
 
 	enter = (e) => {
 		if (e.keyCode === 13) {
 			console.log("enter")
+			this.props.inputPressedEnter(this.state.inputValue)
 		}
 	}
 

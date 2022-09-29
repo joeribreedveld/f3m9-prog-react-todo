@@ -22,6 +22,20 @@ class Todo extends React.Component {
 
 	componentDidUpdate() {}
 
+	inputPressedEnter = (input) => {
+		let toBeAdded = [
+			{
+				name: input,
+				done: false,
+				id: 100,
+			},
+		]
+		let mergedArray = this.state.tasks.concat(toBeAdded)
+		this.setState({
+			tasks: mergedArray,
+		})
+	}
+
 	render() {
 		const items = this.state.tasks.map((task) => {
 			return (
@@ -38,7 +52,7 @@ class Todo extends React.Component {
 						<h1 className='todo__h1'>Things to do</h1>
 					</header>
 					<ul className='todo__list'>{items}</ul>
-					<Input />
+					<Input inputPressedEnter={this.inputPressedEnter} />
 				</article>
 			</>
 		)
